@@ -1,0 +1,14 @@
+{
+  "name": "tiktok-presenter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vertical slides for TikTok LIVE through an OBS Browser Source, controlled from a separate Presenter View.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

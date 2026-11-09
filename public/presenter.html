@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TikTok Presenter</title>
+    <link rel="stylesheet" href="/assets/presenter.css" />
+    <script type="module" src="/assets/presenter.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="topics" aria-label="Topics">
+        <header class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>TikTok Presenter</span>
+        </header>
+
+        <h2 class="section-title">Topics</h2>
+        <nav class="topic-list" data-topic-list></nav>
+
+        <form class="new-topic" data-new-topic>
+          <label class="visually-hidden" for="topic-name">New topic name</label>
+          <input id="topic-name" name="name" class="input" placeholder="New topic" maxlength="60" autocomplete="off" />
+          <button class="button" type="submit">Add</button>
+        </form>
+
+        <section class="obs" aria-label="OBS">
+          <h2 class="section-title">OBS Browser Source</h2>
+          <code class="obs-url" data-obs-url></code>
+          <p class="hint">Width 1080, height 1920.</p>
+          <div class="obs-actions">
+            <button class="button" type="button" data-copy-url>Copy URL</button>
+            <a class="button" href="/present" target="tiktok-presentation">Open</a>
+          </div>
+        </section>
+
+        <p class="connection" data-connection>Connecting…</p>
+      </aside>
+
+      <main class="live" aria-label="On air">
+        <div class="live-head">
+          <h1 class="live-title" data-topic-title>—</h1>
+          <span class="badge-live">On air</span>
+        </div>
+
+        <figure class="screen screen-current">
+          <img data-current alt="" width="1080" height="1920" />
+          <figcaption class="empty" data-empty hidden>No slides in this topic yet. Import images to begin.</figcaption>
+        </figure>
+
+        <div class="controls">
+          <button class="button button-nav" type="button" data-prev aria-label="Previous slide" title="Previous (←)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+          <output class="counter" data-counter aria-live="polite">0 / 0</output>
+          <button class="button button-nav" type="button" data-next aria-label="Next slide" title="Next (→)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+        </div>
+        <p class="hint">← → arrow keys, Page Up / Down or a clicker also move the slides.</p>
+      </main>
+
+      <section class="slides" aria-label="Slides" data-dropzone>
+        <div class="slides-head">
+          <h2 class="section-title">Slides</h2>
+          <span class="status" data-status role="status"></span>
+          <label class="button button-primary">
+            Import images
+            <input class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp" multiple data-import />
+          </label>
+        </div>
+        <p class="hint">Click a slide to put it on air. Drag to reorder. Drop PNG, JPG or WebP files here to import.</p>
+        <ol class="grid" data-grid></ol>
+        <div class="drop-overlay" aria-hidden="true">Drop images to add them to this topic</div>
+      </section>
+    </div>
+  </body>
+</html>
